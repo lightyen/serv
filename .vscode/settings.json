@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "go.toolsEnvVars": {},
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "gopls": {
+    "ui.diagnostic.analyses": { "unusedparams": false }
+  }
+}

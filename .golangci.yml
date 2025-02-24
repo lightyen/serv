@@ -1,0 +1,30 @@
+# golangci-lint v1.61.0
+
+# How to Install golangci-lint:
+#
+# curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.64.5
+
+run:
+  concurrency: 8
+
+linters:
+  enable:
+    - revive
+    - misspell # https://github.com/client9/misspell/blob/master/words.go
+    - bodyclose
+  disable:
+    - unused
+    - depguard
+    - errcheck # https://github.com/kisielk/errcheck/issues/55
+  presets:
+    - import
+linters-settings:
+  revive:
+    rules:
+      - name: unused-parameter
+        disabled: true
+  gci:
+    sections:
+      - standard
+      - default
+      - localmodule
