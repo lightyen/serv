@@ -69,6 +69,7 @@ func (s *Server) returnIndex(useAny bool) gin.HandlerFunc {
 			defer compress.CompressResponseWriter(c).Close()
 
 			c.File(index)
+			c.Abort()
 		}
 	}
 }
