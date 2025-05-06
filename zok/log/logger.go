@@ -87,7 +87,7 @@ func Open(options Options) {
 		return
 	}
 
-	var w io.Writer = NewLogrotateWriter(LogrotateOption{
+	w = NewLogrotateWriter(LogrotateOption{
 		Filename:   filepath.Join(filepath.Clean(filename)),
 		MaxSize:    4 << 20,
 		MaxBackups: 6,
